@@ -29,3 +29,13 @@ services:
     depends_on:
       - postgres
       - rabbit
+  webapp:
+    build: ../webApp
+    environment:
+      - NODE_PATH = ./webApp/src
+    ports:
+      - "3000:3000"
+    volumes:
+      - ../webApp:/code
+      - /code/node_modules
+
