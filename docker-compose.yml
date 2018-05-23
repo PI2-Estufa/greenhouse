@@ -38,4 +38,13 @@ services:
     volumes:
       - ../webApp:/code
       - /code/node_modules
+  webservice:
+    build: ../webService
+    volumes: 
+      - ../webService:/code
+    ports:
+      - "8000:8000"
+    environment:
+      - FLASK_APP=server.py
+      - FLASK_DEBUG=1
 
