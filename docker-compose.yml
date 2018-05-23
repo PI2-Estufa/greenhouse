@@ -1,0 +1,31 @@
+version: "3.5"
+services:
+  rabbit:
+    image: rabbitmq:latest
+  postgres:
+    image: postgres:latest
+    env_file:
+      - .env
+    volumes:
+      - ./postgresql/data:/var/lib/postgresql/data
+  temperature_server:
+    build: ../temperatureServer
+    volumes:
+       - ../temperatureServer:/code
+    depends_on:
+      - postgres
+      - rabbit
+  humidity_server:
+    build: ../humidityServer
+    volumes:
+       - ../humidityServer:/code
+    depends_on:
+      - postgres
+      - rabbit
+  ph_server:
+    build: ../phServer
+    volumes:
+       - ../phServer:/code
+    depends_on:
+      - postgres
+      - rabbit
