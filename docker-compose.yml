@@ -36,3 +36,21 @@ services:
     depends_on:
       - postgres
       - rabbit
+  webapp:
+    build: ../webApp
+    environment:
+      - NODE_PATH = ./webApp/src
+    ports:
+      - "3000:3000"
+    volumes:
+      - ../webApp:/code
+      - /code/node_modules
+  webservice:
+    build: ../webService
+    volumes: 
+      - ../webService:/code
+    ports:
+      - "8000:8000"
+    environment:
+      - FLASK_APP=server.py
+      - FLASK_DEBUG=1
