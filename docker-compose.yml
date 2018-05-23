@@ -29,3 +29,10 @@ services:
     depends_on:
       - postgres
       - rabbit
+  simulators:
+    build: ../simulators
+    volumes:
+       - ../simulators:/code
+    depends_on:
+      - postgres
+      - rabbit
