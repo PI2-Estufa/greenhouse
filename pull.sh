@@ -1,16 +1,3 @@
-cd ../temperatureServer/
-git checkout .
-cd ../humidityServer/ 
-git checkout .
-cd ../phServer/ 
-git checkout .
-cd ../webApp/
-git checkout .
-cd ../webService/
-git checkout .
-cd ../simulators
-git checkout .
-
 cd ../greenhouse/
 git pull origin master
 cd ../temperatureServer/
