@@ -1,4 +1,3 @@
-git checkout .
 cd ../temperatureServer/
 git checkout .
 cd ../humidityServer/ 
