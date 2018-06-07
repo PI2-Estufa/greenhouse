@@ -6,6 +6,8 @@ cd ../humidityServer/
 git pull origin master
 cd ../phServer/ 
 git pull origin master
+cd ../waterLevelServer/ 
+git pull origin master
 cd ../webApp/
 git pull origin master
 cd ../webService/
