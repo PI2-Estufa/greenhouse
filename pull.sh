@@ -1,4 +1,4 @@
-cd /temperatureServer/
+cd ../temperatureServer/
 git checkout .
 cd ../humidityServer/ 
 git checkout .
@@ -11,7 +11,7 @@ git checkout .
 cd ../simulators
 git checkout .
 
-cd /temperatureServer/
+cd ../temperatureServer/
 git pull origin master
 cd ../humidityServer/ 
 git pull origin master
