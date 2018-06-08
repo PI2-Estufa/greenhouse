@@ -29,6 +29,13 @@ services:
     depends_on:
       - postgres
       - rabbit
+  ilumination_server:
+    build: ../iluminationServer
+    volumes:
+       - ../iluminationServer:/code
+    depends_on:
+      - postgres
+      - rabbit
   simulators:
     build: ../simulators
     volumes:
