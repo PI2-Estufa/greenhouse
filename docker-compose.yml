@@ -29,6 +29,13 @@ services:
     depends_on:
       - postgres
       - rabbit
+  water_level_server:
+    build: ../waterLevelServer
+    volumes:
+       - ../waterLevelServer:/code
+    depends_on:
+      - postgres
+      - rabbit
   simulators:
     build: ../simulators
     volumes:
