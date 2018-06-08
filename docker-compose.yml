@@ -29,17 +29,17 @@ services:
     depends_on:
       - postgres
       - rabbit
-<<<<<<< HEAD
   ilumination_server:
     build: ../iluminationServer
     volumes:
        - ../iluminationServer:/code
-=======
+    depends_on:
+      - postgres
+      - rabbit
   water_level_server:
     build: ../waterLevelServer
     volumes:
        - ../waterLevelServer:/code
->>>>>>> 54d2e568d92292cfbf5579e03eadbef2b26f6cec
     depends_on:
       - postgres
       - rabbit
