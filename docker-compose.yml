@@ -43,6 +43,13 @@ services:
     depends_on:
       - postgres
       - rabbit
+  water_temperature_server:
+    build: ../waterTemperatureServer
+    volumes:
+       - ../waterTemperatureServer:/code
+    depends_on:
+      - postgres
+      - rabbit
   simulators:
     build: ../simulators
     volumes:
