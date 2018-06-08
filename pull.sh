@@ -1,3 +1,4 @@
+git pull origin master
 cd ../greenhouse/
 git pull origin master
 cd ../temperatureServer/
