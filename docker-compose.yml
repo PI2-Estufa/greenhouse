@@ -50,6 +50,13 @@ services:
     depends_on:
       - postgres
       - rabbit
+  drawer_status_server:
+    build: ../drawerStatusServer
+    volumes:
+       - ../drawerStatusServer:/code
+    depends_on:
+      - postgres
+      - rabbit
   simulators:
     build: ../simulators
     volumes:

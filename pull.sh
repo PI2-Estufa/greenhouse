@@ -1,6 +1,4 @@
 git pull origin master
-cd ../greenhouse/
-git pull origin master
 cd ../temperatureServer/
 git pull origin master
 cd ../humidityServer/ 
@@ -16,6 +14,8 @@ git pull origin master
 cd ../webService/
 git pull origin master
 cd ../waterTemperatureServer/
+git pull origin master
+cd ../drawerStatusServer/
 git pull origin master
 cd ../simulators
 git pull origin master
