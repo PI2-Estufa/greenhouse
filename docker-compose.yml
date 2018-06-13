@@ -10,6 +10,8 @@ services:
       - ./postgresql/data:/var/lib/postgresql/data
   temperature_server:
     build: ../temperatureServer
+    env_file:
+      - .env
     volumes:
        - ../temperatureServer:/code
     depends_on:
@@ -17,6 +19,8 @@ services:
       - rabbit
   humidity_server:
     build: ../humidityServer
+    env_file:
+      - .env
     volumes:
        - ../humidityServer:/code
     depends_on:
@@ -24,6 +28,8 @@ services:
       - rabbit
   ph_server:
     build: ../phServer
+    env_file:
+      - .env
     volumes:
        - ../phServer:/code
     depends_on:
@@ -31,6 +37,8 @@ services:
       - rabbit
   ilumination_server:
     build: ../iluminationServer
+    env_file:
+      - .env
     volumes:
        - ../iluminationServer:/code
     depends_on:
@@ -38,6 +46,8 @@ services:
       - rabbit
   water_level_server:
     build: ../waterLevelServer
+    env_file:
+      - .env
     volumes:
        - ../waterLevelServer:/code
     depends_on:
@@ -45,6 +55,8 @@ services:
       - rabbit
   water_temperature_server:
     build: ../waterTemperatureServer
+    env_file:
+      - .env
     volumes:
        - ../waterTemperatureServer:/code
     depends_on:
@@ -52,6 +64,8 @@ services:
       - rabbit
   drawer_status_server:
     build: ../drawerStatusServer
+    env_file:
+      - .env
     volumes:
        - ../drawerStatusServer:/code
     depends_on:
@@ -59,6 +73,8 @@ services:
       - rabbit
   simulators:
     build: ../simulators
+    env_file:
+      - .env
     volumes:
        - ../simulators:/code
     depends_on:
@@ -66,6 +82,8 @@ services:
       - rabbit
   webapp:
     build: ../webApp
+    env_file:
+      - .env
     environment:
       - NODE_PATH = ./webApp/src
     ports:
@@ -75,6 +93,8 @@ services:
       - /code/node_modules
   webservice:
     build: ../webService
+    env_file:
+      - .env
     volumes: 
       - ../webService:/code
     ports:
