@@ -78,6 +78,15 @@ services:
     depends_on:
       - postgres
       - rabbit
+  image_server:
+    build: ../imageServer
+    env_file:
+      - .env
+    volumes:
+       - ../imageServer:/code
+    depends_on:
+      - postgres
+      - rabbit
   simulators:
     build: ../simulators
     env_file:
