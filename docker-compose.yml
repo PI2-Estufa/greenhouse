@@ -16,6 +16,7 @@ services:
     volumes:
       - ./postgresql/data:/var/lib/postgresql/data
   temperature_server:
+    image: amoedo/temperature_server
     build: ../temperatureServer
     env_file:
       - .env
@@ -25,6 +26,7 @@ services:
       - postgres
       - rabbit
   humidity_server:
+    image: amoedo/humidity_server
     build: ../humidityServer
     env_file:
       - .env
@@ -34,6 +36,7 @@ services:
       - postgres
       - rabbit
   ph_server:
+    image: amoedo/ph_server
     build: ../phServer
     env_file:
       - .env
@@ -43,6 +46,7 @@ services:
       - postgres
       - rabbit
   ilumination_server:
+    image: amoedo/ilumination_server
     build: ../iluminationServer
     env_file:
       - .env
@@ -52,6 +56,7 @@ services:
       - postgres
       - rabbit
   water_level_server:
+    image: amoedo/water_level_server
     build: ../waterLevelServer
     env_file:
       - .env
@@ -61,6 +66,7 @@ services:
       - postgres
       - rabbit
   water_temperature_server:
+    image: amoedo/water_temperature_server
     build: ../waterTemperatureServer
     env_file:
       - .env
@@ -70,6 +76,7 @@ services:
       - postgres
       - rabbit
   drawer_status_server:
+    image: amoedo/drawer_status_server
     build: ../drawerStatusServer
     env_file:
       - .env
@@ -79,6 +86,7 @@ services:
       - postgres
       - rabbit
   image_server:
+    image: amoedo/image_server
     build: ../imageServer
     env_file:
       - .env
